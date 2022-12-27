@@ -1,47 +1,21 @@
-def get_number_of_digits(string):
-    count = 0
-    for char in string:
-        try:
-            count += 1
-        except ValueError:
-            pass
-    return count
-if __name__ == '__main__':
-    string = '23123123' #кількість
-    print(get_number_of_digits(string))
-
-
-
-def sum_digits(string):
-    s = 0
-    for char in string:
-        try:
-            n = int(char)
-            s += n
-        except ValueError:
-            pass
-    return s
-
-
-if __name__ == '__main__':
-    string = "134314314 " #сума
-    print(sum_digits(string))
-
-
-
-def chastka_of_digits(string):
-    for char in string:
-        try:
-            n = int(char)
-        except ValueError:
-            pass
-        return n
-if __name__ == '__main__':
-    string = '458205825'
+import math
+while True:
+    a, b, c = [float(el) for el in input("Введiть коефiцiєнти квадратного рiвняння: ").split()]
+    D = b**2 - 4 * a * c
     try:
-        print((max(string)) / (min(string)))
-    except TypeError:
-        pass
-    print(chastka_of_digits(string))
+        assert (D > 0) or (D == 0)
+        if D > 0:
+            x1 = ((-b + math.sqrt(D)) / (2 * a))
+            x2 = ((-b - math.sqrt(D)) / (2 * a))
+            print("Вiдповiдь: x1 = %.2f \nx2 = %.2f" % (x1, x2))
+        else:
+            D == 0
+            x = ((-b) / (2 * a))
+            print("Вiдповiдь: x = ", x)
+        break
+    except AssertionError:
+        print("Рiвняння не має розвязкiв, бо D < 0")
+    except ZeroDivisionError as e:
+        print("Перший коефiцієнт а не може дорiвнювати нулю!", e)
 
 
