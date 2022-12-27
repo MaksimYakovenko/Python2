@@ -1,5 +1,5 @@
 import math
-from l3_3_1 import Figure
+from 3.3.1 import Figure
 
 
 class Triangle(Figure):
