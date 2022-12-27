@@ -1,6 +1,6 @@
 import math
-from l3_3_1_2 import Triangle, Rectangle, Circle
-from l3_3_1 import Figure
+from 3.3.1_2 import Triangle, Rectangle, Circle
+from 3.3.1 import Figure
 
 
 class TriangularPyramid(Figure):
